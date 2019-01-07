@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Sell = props => (
   <div>
-    <p>Sell!</p>
+    <h1>Sell</h1>
     <Link href="/">
-      <a>Home!</a>
+      <a>Go back Home</a>
     </Link>
   </div>
 );
