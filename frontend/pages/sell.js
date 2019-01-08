@@ -2,7 +2,7 @@ import React from "react";
 
 const Sell = props => (
   <div>
-    <h1>Sell</h1>
+    <h2>Sell</h2>
   </div>
 );
 
