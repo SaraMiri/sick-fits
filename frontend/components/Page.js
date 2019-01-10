@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, injectGlobal } from "styled-components";
 
 import Header from "./Header";
 import Meta from "./Meta";
@@ -20,10 +20,25 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
   max-width: ${props => props.theme.maxWidth};
-  background: ${props => props.theme.red};
   margin: 0 auto;
   padding: 2rem;
 `;
+
+injectGlobal`
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  }
+  body {
+    padding:0;
+    margin:0;
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  `;
 
 class Page extends React.Component {
   render() {
