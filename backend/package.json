@@ -10,7 +10,7 @@
     "deploy": "prisma deploy --env-file variables.env"
   },
   "resolutions": {
-    "graphql": "^0.13.1"
+    "graphql": "^0.13.2"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
@@ -19,7 +19,7 @@
     "dotenv": "6.0.0",
     "graphql": "^0.13.2",
     "graphql-cli": "^3.0.4",
-    "graphql-yoga": "1.16.2",
+    "graphql-yoga": "1.16.9",
     "jsonwebtoken": "8.3.0",
     "nodemailer": "^4.6.8",
     "nodemon": "^1.18.7",
