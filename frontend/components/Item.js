@@ -15,10 +15,11 @@ class Item extends React.Component {
     return (
       <ItemStyles>
         {item.image && <img src={item.image} alt={item.title} />}
+
         <Title>
           <Link
             href={{
-              pathname: "./item",
+              pathname: "/item",
               query: { id: item.id }
             }}
           >
@@ -28,17 +29,17 @@ class Item extends React.Component {
         <PriceTag>{formatMoney(item.price)}</PriceTag>
         <p>{item.description}</p>
 
-        <div classname="buttonList">
+        <div className="buttonList">
           <Link
             href={{
               pathname: "update",
               query: { id: item.id }
             }}
           >
-            <a>Edit ✏</a>
+            <a>Edit ✏️</a>
           </Link>
-          <button>Add to Cart</button>
-          <button>Delete</button>
+          <button>Add To Cart</button>
+          <button>Delete </button>
         </div>
       </ItemStyles>
     );
