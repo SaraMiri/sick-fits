@@ -17,12 +17,17 @@ class CreateItem extends React.Component {
   handleChange = event => {
     const { name, type, value } = event.target;
     const val = type === "number" ? parseFloat(value) : value;
-    this.setState({ title: val });
+    this.setState({ [name]: val });
   };
 
   render() {
     return (
-      <Form>
+      <Form
+        onSubmit={event => {
+          event.preventDefault();
+          console.log(this.state);
+        }}
+      >
         <fieldset>
           <label htmlFor="title">
             Title
@@ -36,6 +41,31 @@ class CreateItem extends React.Component {
               onChange={this.handleChange}
             />
           </label>
+
+          <label htmlFor="price">
+            Price
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Price"
+              required
+              value={this.state.price}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label htmlFor="description">
+            Description
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Enter a Description"
+              required
+              value={this.state.description}
+              onChange={this.handleChange}
+            />
+          </label>
+          <button type="submit">Submit</button>
         </fieldset>
       </Form>
     );
