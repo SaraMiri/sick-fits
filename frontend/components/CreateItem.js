@@ -5,6 +5,26 @@ import gql from "graphql-tag";
 import Form from "./styles/Form";
 import formatMoney from "../lib/formatMoney";
 
+const CREATE_ITEM_MUTATION = gql`
+  mutation CREATE_ITEM_MUTATION(
+    $title: String!
+    $description: String!
+    $price: Int!
+    $image: String
+    $largeImage: String
+  ) {
+    createItem(
+      title: $title
+      description: $description
+      price: $price
+      image: $image
+      largeImage: $largeImage
+    ) {
+      id
+    }
+  }
+`;
+
 class CreateItem extends React.Component {
   state = {
     title: "",
@@ -73,3 +93,4 @@ class CreateItem extends React.Component {
 }
 
 export default CreateItem;
+export { CREATE_ITEM_MUTATION };
